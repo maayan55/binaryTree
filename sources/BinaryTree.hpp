@@ -21,7 +21,7 @@ namespace ariel {
         public:
         BinaryTree() : root(nullptr){}
         ~BinaryTree() { delete root; }
-        //Node *found(Node *n, T key);
+        //Node *find(Node *n, T key);
         BinaryTree &add_root(T k) {//get a key, and put it as a root (if there already a root- change it)
             root = new Node(k);
             return *this;
@@ -81,10 +81,10 @@ namespace ariel {
     };
     /*
     template<typename T>
-    typename BinaryTree<T>::Node *BinaryTree<T>::found(BinaryTree::Node *node, T key) {
+    typename BinaryTree<T>::Node *BinaryTree<T>::find(BinaryTree::Node *node, T key) {
         if (node == nullptr || node->key == key) { return node; }
-        Node *find_left = found(node->left, key);
-        Node *find_right = found(node->right, key);
+        Node *find_left = find(node->left, key);
+        Node *find_right = find(node->right, key);
         if (find_left == nullptr) { return find_right; } 
         else { return find_left; }
     } */
